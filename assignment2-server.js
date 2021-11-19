@@ -13,7 +13,7 @@ const playRouter = require("./handlers/playRouter.js");
 playRouter.handleAllPlays(app, Play);
 playRouter.handleSinglePlay(app, Play);
 userRouter.handleSingleUser(app, User);
-const port = process.env.port;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log("Server running at port= " + port);
 });
