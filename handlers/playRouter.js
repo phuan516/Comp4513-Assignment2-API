@@ -1,5 +1,8 @@
+
+const helper = require('./helper.js');
+
 const handleAllPlays = (app, Play) => {
-  app.route("/api/list").get((req, resp) => {
+  app.get("/api/list", (req, resp) => {
     // use mongoose to retrieve all plays from Mongo
     Play.find({}, { playText: 0, _id: 0 }, (err, data) => {
       if (err) {
@@ -13,7 +16,7 @@ const handleAllPlays = (app, Play) => {
 };
 
 const handleSinglePlay = (app, Play) => {
-  app.route("/api/play/:id").get((req, resp) => {
+  app.get("/api/play/:id", (req, resp) => {
     Play.find({ id: req.params.id }, { _id: 0 }, (err, data) => {
       if (err) {
         resp.json({ message: "Play not found" });
