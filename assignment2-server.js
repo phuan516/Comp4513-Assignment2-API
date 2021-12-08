@@ -11,6 +11,7 @@ require("./utils/dataConnector.js").connect();
 require("./scripts/auth.js");
 // create an express app
 const app = express();
+app.use(express.static("build"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const Play = require("./models/Plays");
@@ -41,8 +42,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(flash());
-
-app.use(express.static("public"));
 
 // app.get('/', helper.ensureAuthenticated, (req, res) => {
 //     res.render(path.join(__dirname, "../client/build/index.html"), { user: req.user });
