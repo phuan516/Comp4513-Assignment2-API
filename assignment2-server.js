@@ -42,6 +42,8 @@ app.use(passport.session());
 
 app.use(flash());
 
+app.use(express.static("public"));
+
 // app.get('/', helper.ensureAuthenticated, (req, res) => {
 //     res.render(path.join(__dirname, "../client/build/index.html"), { user: req.user });
 //     });
@@ -63,7 +65,7 @@ app
     res.sendStatus(200);
   })
   .get(cors(), (req, res) => {
-    res.redirect("http://localhost:3000/");
+    res.redirect("https://comp4513-assignment2.herokuapp.com/");
   });
 
 // use the route handlers
