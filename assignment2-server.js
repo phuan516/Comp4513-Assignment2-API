@@ -25,8 +25,7 @@ app.set("view engine", "ejs");
 
 app.use(
   cors({
-    origin: "https://comp4513-assignment2.herokuapp.com", // <-- location of the react app were connecting to
-    credentials: true,
+    origin: "http://localhost:3000
   })
 );
 
