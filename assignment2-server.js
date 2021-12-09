@@ -25,7 +25,8 @@ app.set("view engine", "ejs");
 
 app.use(
   cors({
-    origin: "http://localhost:3000
+    origin: "http://localhost:3000", // <-- location of the react app were connecting to
+    credentials: true,
   })
 );
 
