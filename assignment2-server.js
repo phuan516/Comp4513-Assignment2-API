@@ -22,6 +22,17 @@ const User = require("./models/Users");
 app.set("views", "./views");
 app.set("view engine", "ejs");
 /* --- middleware section --- */
+app.use(function (req, res, next) {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://comp4513-assignment2.herokuapp.com"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.use(
   cors({
